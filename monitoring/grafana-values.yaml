@@ -1,0 +1,19 @@
+adminPassword: "<my-password>" 
+
+service:
+  type: NodePort
+  nodePort: 32000
+
+persistence:
+  enabled: false
+
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+    - name: Prometheus
+      type: prometheus
+      url: http://prometheus-server.monitoring.svc.cluster.local
+      access: proxy
+      isDefault: true
+

@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: yolo-inference-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: yolo-inference
+  ingress:
+  - ports:
+    - port: 8000
+  egress:
+  - ports:
+    - port: 53
+      protocol: UDP
+    - port: 53
+      protocol: TCP
+  policyTypes:
+  - Ingress
+  - Egress

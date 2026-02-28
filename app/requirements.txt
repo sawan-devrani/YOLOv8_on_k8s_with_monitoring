@@ -1,0 +1,7 @@
+fastapi==0.115.0
+uvicorn==0.30.0
+ultralytics==8.3.0
+pillow==10.4.0
+python-multipart==0.0.9
+prometheus-fastapi-instrumentator==6.1.0
+prometheus-client==0.20.0

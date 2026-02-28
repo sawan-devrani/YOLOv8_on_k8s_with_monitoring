@@ -1,0 +1,26 @@
+prometheus-node-exporter:
+  enabled: false
+
+alertmanager:
+  enabled: false
+
+prometheus-pushgateway:
+  enabled: false
+
+kube-state-metrics:
+  enabled: true
+
+server:
+  persistentVolume:
+    enabled: false
+
+  service:
+    type: NodePort
+    nodePort: 30900
+
+  extraScrapeConfigs: |
+    - job_name: 'yolo-inference'
+      static_configs:
+        - targets:
+            - '10.1.1.69:8000' 
+            - '10.1.1.70:8000'
