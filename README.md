@@ -123,12 +123,12 @@ topk(10, yolo_detected_class_total)
 
 ## Service Endpoints
 
-| Service | URL | Auth |
-|---|---|---|
-| Inference API | `http://localhost:30800` | — |
-| Metrics | `http://localhost:30800/metrics` | — |
-| Prometheus | `http://localhost:30900` | — |
-| Grafana | `http://localhost:32000` | admin / admin123 |
+| Service | URL | 
+|---|---|
+| Inference API | `http://localhost:30800` |
+| Metrics | `http://localhost:30800/metrics` |
+| Prometheus | `http://localhost:30900` |
+| Grafana | `http://localhost:32000` |
 
 ---
 
