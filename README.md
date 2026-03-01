@@ -28,7 +28,7 @@ YOLOv8n (nano) was chosen for its balance of accuracy and CPU inference speed,
 averaging ~250ms per image after model warmup.
 
 **2-replica deployment** — Provides basic availability and demonstrates K8s
-load balancing across pods. Resource limits are set to 2 CPU cores and 768Mi
+load balancing across pods. Resource limits are set to 2 CPU cores and 1Gi
 memory per pod.
 
 **Metrics-first instrumentation** — Custom Prometheus metrics are defined at
