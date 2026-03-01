@@ -103,20 +103,23 @@ kubectl rollout restart deployment prometheus-server -n monitoring
 | `yolo_detected_class_total` | Counter | Per-class detection frequency |
 | `http_request_duration_seconds` | Histogram | Full request latency by endpoint |
 
-**Key Grafana queries:**
+**Key Grafana queries( create these panels for your dashboard ):**
 
 ```promql
-# Inference latency percentiles
-histogram_quantile(0.95, rate(yolo_inference_duration_seconds_bucket[5m]))
-
-# Request throughput
+# Request rate to /predict
 rate(http_requests_total{handler="/predict"}[1m])
+
+# Inference latency p50 / p95 / p99
+histogram_quantile(0.95, rate(yolo_inference_duration_seconds_bucket[5m]))
 
 # Average detections per image
 rate(yolo_detections_per_image_sum[5m]) / rate(yolo_detections_per_image_count[5m])
 
-# Detection distribution by class
-topk(10, yolo_detected_class_total)
+# Total images processed
+yolo_images_processed_total
+
+# Detections by class
+yolo_detected_class_total
 ```
 
 ---
